@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\BerandaOperatorController;
+use App\Http\Controllers\BerandaWaliController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +23,23 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::prefix('operator')->middleware(['auth', 'auth.operator'])->group(function () {
+    //ini route khusus untuk operator
+    Route::get('beranda', [BerandaOperatorController::class, 'index'])->name('operator.beranda');
+});
+
+
+Route::prefix('wali')->middleware(['auth', 'auth.wali'])->group(function () {
+    //ini route khusus untuk wali-murid
+    Route::get('beranda', [BerandaWaliController::class, 'index'])->name('wali.beranda');
+});
+
+
+Route::prefix('admin')->middleware(['auth', 'auth.admin'])->group(function () {
+    //ini route khusus untuk admin
+});
+
+Route::get('logout', function () {
+    Auth::logout();
+});
