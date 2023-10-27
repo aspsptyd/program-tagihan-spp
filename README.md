@@ -32,4 +32,4 @@ Installasi
 
 Update Feature
 
-_Soon_
+- Integrasi Register & Login <a href="https://github.com/aspsptyd/program-tagihan-spp/pull/2">#2</a>
