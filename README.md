@@ -7,3 +7,17 @@ Untuk menjalankan program dari repository ini berikut tahapannya
 ```
 composer install
 ```
+
+Lalu kemudian ketikkan command dibawah ini untuk generate key application wajib dilakukan
+
+```
+php artisan key:generate
+```
+
+Kemudian copy file `.env.example` lalu ubah namanya menjadi `.env`, Jika sudah kemudian jalankan command 
+
+```
+php artisan serve
+```
+
+Dan klik tautan, Boom! Ready for dev bruh...
