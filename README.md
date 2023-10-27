@@ -5,6 +5,7 @@ Aplikasi untuk memaintain Tagihan Pembayaran Sekolah Berbasis Web Admin dengan M
 Untuk menjalankan program dari repository ini berikut tahapannya
 
 ```
+composer update
 composer install
 ```
 
